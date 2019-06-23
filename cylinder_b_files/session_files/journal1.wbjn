@@ -1,0 +1,15 @@
+# encoding: utf-8
+# Release 19.1
+SetScriptVersion(Version="19.1.103")
+template1 = GetTemplate(TemplateName="FLUENT")
+system1 = template1.CreateSystem()
+setup1 = system1.GetContainer(ComponentName="Setup")
+setup1.Import(
+    FilePath="C:/Users/y/Downloads/1w.msh",
+    FileType="Mesh")
+setupComponent1 = system1.GetComponent(Name="Setup")
+setupComponent1.Refresh()
+fluentLauncherSettings1 = setup1.GetFluentLauncherSettings()
+fluentLauncherSettings1.SetEntityProperties(Properties=Set(Precision="Double", EnvPath={}, RunParallel=True, NumberOfProcessors=8))
+setup1.Edit()
+Save(Overwrite=True)

@@ -1,0 +1,15 @@
+# encoding: utf-8
+# Release 19.1
+SetScriptVersion(Version="19.1.103")
+system1 = GetSystem(Name="FLTG")
+solution1 = system1.GetContainer(ComponentName="Solution")
+solution1.Edit()
+solution1.Edit()
+setup1 = system1.GetContainer(ComponentName="Setup")
+fluentLauncherSettings1 = setup1.GetFluentLauncherSettings()
+fluentLauncherSettings1.SetEntityProperties(Properties=Set(EnvPath={}))
+setup1.Edit()
+setup1.SendCommand(Command="(cx-use-window-id 1)(cx-use-window-id 1)(dolly-camera -0.634224 -0.461136 0)(cx-use-window-id 1)(dolly-camera -0.589887 -0.171692 0)(cx-use-window-id 1)(dolly-camera 0.103729 0.149966 0)(cx-use-window-id 1)(dolly-camera 0.0495693 0.38695 0)(cx-use-window-id 1)(dolly-camera -0.0781605 -0.113853 0)(cx-use-window-id 1)(dolly-camera -0.163711 -0.251861 0)")
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "MenuBar*FileMenu*Close Fluent")')
+Save(Overwrite=True)
+Open(FilePath="D:/MlCode/cylinder/cylinder_gen.wbpj")
